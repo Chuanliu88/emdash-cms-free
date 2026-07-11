@@ -18,6 +18,12 @@
       "preview_bucket_name": "emdash-cms-free-media",
     },
   ],
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "9fb9801336224174ad48cc19d3430d68",
+    },
+  ],
   // Plugins disabled: Dynamic Workers requires a paid Cloudflare plan.
   // Drives scheduled publishing and maintenance (see src/worker.ts)
   "triggers": {

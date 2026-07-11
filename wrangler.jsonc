@@ -1,29 +1,26 @@
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "emdash-cms-free",
-	"main": "./src/worker.ts",
-	"compatibility_date": "2026-02-24",
-	"compatibility_flags": ["nodejs_compat"],
-	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "emdash-cms-free-db","database_id": "4dde6a77-8037-41ea-ac41-6e0f56e972f2",
-		},
-	],
-	"r2_buckets": [
-		{
-			"binding": "MEDIA",
-			"bucket_name": "emdash-cms-free-media","preview_bucket_name": "emdash-cms-free-media",
-		},
-	],
-	// Worker Loader for plugin sandboxing
-	"worker_loaders": [
-		{
-			"binding": "LOADER",
-		},
-	],
-	// Drives scheduled publishing, plugin cron, and maintenance (see src/worker.ts)
-	"triggers": {
-		"crons": ["* * * * *"],
-	},
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "emdash-cms-free",
+  "main": "./src/worker.ts",
+  "compatibility_date": "2026-02-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "emdash-cms-free-db",
+      "database_id": "4dde6a77-8037-41ea-ac41-6e0f56e972f2",
+    },
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "emdash-cms-free-media",
+      "preview_bucket_name": "emdash-cms-free-media",
+    },
+  ],
+  // Plugins disabled: Dynamic Workers requires a paid Cloudflare plan.
+  // Drives scheduled publishing and maintenance (see src/worker.ts)
+  "triggers": {
+    "crons": ["* * * * *"],
+  },
 }
